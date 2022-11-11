@@ -1,10 +1,14 @@
+package lab1;
+
 import java.awt.*;
 
+import org.junit.Test;
+
 public class Car implements Movable{
-    private int nrDoors;
-    private double enginePower;
-    private double currentSpeed;
-    private Color color;
+    protected int nrDoors;
+    protected double enginePower;
+    protected double currentSpeed;
+    protected Color color;
     private double xCord;
     private double yCord;
     private Direction direction;
@@ -80,6 +84,26 @@ public class Car implements Movable{
         decrementSpeed(amount);
     }
 
+    public double getXCord() {
+        return xCord;
+    }
+
+    public double getYCord() {
+        return yCord;
+    }
+
+    public int getXChange() {
+        return xChange;
+    }
+
+    public int getYChange() {
+        return yChange;
+    }
+
+    public Direction getDirection() {
+        return this.direction;
+    }
+
     @Override
     public void move() {
         this.xCord += this.xChange * currentSpeed;
@@ -93,28 +117,30 @@ public class Car implements Movable{
                 this.xChange = -1;
                 this.yChange = 0;
                 this.direction = Direction.LEFT;
+                break;
             case DOWN:
                 this.xChange = 1;
                 this.yChange = 0;
                 this.direction = Direction.RIGHT;
+                break;
             case LEFT:
                 this.xChange = 0;
                 this.yChange = 1;
                 this.direction = Direction.DOWN;
+                break;
             case RIGHT:
                 this.xChange = 0;
                 this.yChange = -1;
                 this.direction = Direction.UP;
+                break;
         }
-
-        
     }
 
     @Override
     public void turnRight() {
         switch (this.direction) {
             case UP:
-                this.xChange = 11;
+                this.xChange = 1;
                 this.yChange = 0;
                 this.direction = Direction.RIGHT;
             case DOWN:
