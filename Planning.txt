@@ -1,0 +1,30 @@
+What do the different models have in common? bla 
+
+Variables
+* Number of doors
+* Model name
+* Color
+* Engine power
+
+Methods
+* Getter of doors
+* Getter of engine power
+* Getter of Color
+* Setter of Color
+* Start engine 
+* Stop engine
+* speedFactor 
+* IncementSpeed
+* decrementSpeed
+* Gas
+* Brake
+
+Implementation inheritance (subclassing)
+
+- Good?
+We use superclass instead of interface, this is because the different car models are based on the same object ("is a car"). We want
+the objects to be indirectly but strongly connected to one eachother. We are not using a interface because we want to use variables
+and not only methods from the "base-class".  
+- Bad?
+
+
