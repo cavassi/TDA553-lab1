@@ -16,7 +16,7 @@ public class Car implements Movable{
     private int yChange;
     //. private String modelName;
 
-    enum Direction {
+    public enum Direction {
         UP,
         DOWN,
         LEFT,
@@ -66,11 +66,11 @@ public class Car implements Movable{
         return enginePower * 0.01;
     }
 
-    public void incrementSpeed(double amount){
+    private void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
     }
 
-    public void decrementSpeed(double amount){
+    private void decrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
     
