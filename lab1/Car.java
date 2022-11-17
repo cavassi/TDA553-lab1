@@ -2,8 +2,6 @@ package lab1;
 
 import java.awt.*;
 
-import org.junit.Test;
-
 public class Car implements Movable{
     protected int nrDoors;
     protected double enginePower;
@@ -66,12 +64,16 @@ public class Car implements Movable{
         return enginePower * 0.01;
     }
 
-    private void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+    protected void incrementSpeed(double amount) {
+        if (amount <= 1 && amount >= 0) {
+            currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
+        }
     }
 
-    private void decrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+    protected void decrementSpeed(double amount){
+        if (amount <= 1 && amount >= 0) {
+            currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
+        }
     }
     
     // TODO fix this method according to lab pm
@@ -143,18 +145,22 @@ public class Car implements Movable{
                 this.xChange = 1;
                 this.yChange = 0;
                 this.direction = Direction.RIGHT;
+                break;
             case DOWN:
                 this.xChange = -1;
                 this.yChange = 0;
                 this.direction = Direction.LEFT;
+                break;
             case LEFT:
                 this.xChange = 0;
                 this.yChange = -1;
                 this.direction = Direction.UP;
+                break;
             case RIGHT:
                 this.xChange = 0;
                 this.yChange = 1;
                 this.direction = Direction.DOWN;
+                break;
         }
     }
 }
