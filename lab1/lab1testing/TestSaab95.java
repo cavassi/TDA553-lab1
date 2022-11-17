@@ -49,18 +49,6 @@ public class TestSaab95 {
     public void testTurnLeft_when_direction_for_Saab_is_up_should_have_direction_left() {
         testSaab95.turnLeft();
         assertEquals(Car.Direction.LEFT, testSaab95.getDirection());
-        testSaab95.turnLeft();
-        assertEquals(0, testSaab95.getXChange());
-        assertEquals(1, testSaab95.getYChange());
-        assertEquals(Car.Direction.DOWN, testSaab95.getDirection());
-        testSaab95.turnLeft();
-        assertEquals(1, testSaab95.getXChange());
-        assertEquals(0, testSaab95.getYChange());
-        assertEquals(Car.Direction.RIGHT, testSaab95.getDirection());
-        testSaab95.turnLeft();
-        assertEquals(0, testSaab95.getXChange());
-        assertEquals(-1, testSaab95.getYChange());
-        assertEquals(Car.Direction.UP, testSaab95.getDirection());
     }
 
     @Test
@@ -76,7 +64,7 @@ public class TestSaab95 {
     }
 
     @Test
-    public void testTurnLeft_when_direction_for_Saab_is_left_should_have_direction_left() {
+    public void testTurnLeft_when_direction_for_Saab_is_left_should_have_direction_down() {
         testSaab95.turnLeft();
         testSaab95.turnLeft();
         assertEquals(Car.Direction.DOWN, testSaab95.getDirection());
@@ -90,9 +78,60 @@ public class TestSaab95 {
     }
 
     @Test
-    public void testTurnLeft_when_direction_for_Saab_is_up_should_have_yChange_1() {
+    public void testTurnLeft_when_direction_for_Saab_is_left_should_have_yChange_1() {
         testSaab95.turnLeft();
         testSaab95.turnLeft();
         assertEquals(1, testSaab95.getYChange());
+    }
+
+    @Test
+    public void testTurnLeft_when_direction_for_Saab_is_down_should_have_direction_right() {
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        assertEquals(Car.Direction.RIGHT, testSaab95.getDirection());
+    }
+
+    @Test
+    public void testTurnLeft_when_direction_for_Saab_is_down_should_have_xChange_1() {
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        assertEquals(1, testSaab95.getXChange());
+    }
+
+    @Test
+    public void testTurnLeft_when_direction_for_Saab_is_down_should_have_yChange_0() {
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        assertEquals(0, testSaab95.getYChange());
+    }
+
+    @Test
+    public void testTurnLeft_when_direction_for_Saab_is_right_should_have_direction_up() {
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        assertEquals(Car.Direction.UP, testSaab95.getDirection());
+    }
+
+    @Test
+    public void testTurnLeft_when_direction_for_Saab_is_right_should_have_xChange_0() {
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        assertEquals(0, testSaab95.getXChange());
+    }
+
+    @Test
+    public void testTurnLeft_when_direction_for_Saab_is_right_should_have_yChange_minus_1() {
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        testSaab95.turnLeft();
+        assertEquals(-1, testSaab95.getYChange());
     }
 }
