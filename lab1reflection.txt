@@ -1,0 +1,19 @@
+    Explain how you chose the inheritance hierarchy in Task 1, making reference to the Open-Closed Principle.
+
+-We chose a superclass "car" that holds all common methods and attributes between car models
+-Extending the program with more carmodels can be done with open-closed principle in mind, therefore the initial code don't need to be changed
+
+
+
+    Explain how you implemented each of the sanity checks in Task 4.
+
+-We added a condition which reaches the needed requirements, for example on the first one:
+
+        if (amount <= 1 && amount >= 0)
+    
+This condition limits the input to desired values, and if input is out of bound the methods does nothing. 
+This also solved the gas() and brake() tasks since the input can not be a negative number.
+
+For the currentSpeed limitation we added a roof condition which only allowed the currentSpeed to be enginePower at most, through a Math.min condition
+
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower)
