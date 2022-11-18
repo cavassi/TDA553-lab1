@@ -1,4 +1,4 @@
-package lab1.lab1testing;
+package lab1testing;
 
 import static org.junit.Assert.assertEquals;
 
