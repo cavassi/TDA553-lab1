@@ -1,8 +1,16 @@
     Explain how you chose the inheritance hierarchy in Task 1, making reference to the Open-Closed Principle.
 
 -We chose a superclass "car" that holds all common methods and attributes between car models
+-The superclass implements the interface movable in order to achieve abstraction at the toplevel of the hierarchy
+-Therefore the two car models extend the Car superclass granting them all methods and attributes found in car as well as the functionality
+ of movable
+-Setting it up this way allows us to easily inherit and subsequently override methods from Car
+-It also allows us to inherit all common attributes and include model specific ones like turboOn in Saab95
 -Extending the program with more carmodels can be done with open-closed principle in mind, therefore the initial code don't need to be changed
-
+-The reason why this follows the OCP is because we can extend the functionality of a specific car model, for example Saab95 and the turbo function
+ without having to rewrite the code completely in Car. We simply override the inherited method using our new attribute.
+ Therefore the source code in Car hasn't changed at all, we simply override it. In that way Volvo240 can keep the original functionality from car
+ This makes the Car class closed for modification and open for extension
 
 
     Explain how you implemented each of the sanity checks in Task 4.
